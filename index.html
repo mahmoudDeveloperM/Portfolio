@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,16 +7,23 @@
   <meta name="keywords" content="Mahmoud Abdelrahman, Frontend Developer, Vue.js, Nuxt.js, JavaScript, PWA, SEO, Portfolio" />
   <meta name="author" content="Mahmoud Abdelrahman" />
   <meta name="theme-color" content="#0b1020" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Mahmoud" />
+  <meta name="application-name" content="Mahmoud Portfolio" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mahmoud Abdelrahman | Premium Frontend Developer Portfolio" />
   <meta property="og:description" content="Premium frontend portfolio for Vue.js, Nuxt.js, SEO, PWA, and modern web applications." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/180/000000/code.png" />
   <title>Mahmoud Abdelrahman | Premium Frontend Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -45,6 +52,8 @@
       overflow-x: hidden;
       line-height: 1.65;
     }
+
+    html[dir="rtl"] body { font-family: Cairo, Inter, system-ui, sans-serif; }
 
     body::before {
       content: "";
@@ -83,7 +92,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .container { width: 100%; max-width: none; margin: 0; padding-left: clamp(18px, 5vw, 72px); padding-right: clamp(18px, 5vw, 72px); }
 
     header {
       position: fixed;
@@ -112,6 +121,8 @@
       letter-spacing: -.04em;
     }
 
+    html[dir="rtl"] .brand { letter-spacing: 0; }
+
     .brand-mark {
       width: 42px;
       height: 42px;
@@ -122,6 +133,7 @@
       box-shadow: 0 16px 40px rgba(124,58,237,.35);
     }
 
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
     .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-links a {
       color: var(--muted);
@@ -133,15 +145,19 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,.08); }
 
-    .menu-btn {
-      display: none;
+    .menu-btn, .lang-btn, .install-btn {
       border: 1px solid var(--border);
       background: var(--panel);
       color: var(--text);
       border-radius: 14px;
       padding: 10px 12px;
       font-weight: 800;
+      cursor: pointer;
+      transition: .25s;
     }
+    .menu-btn { display: none; }
+    .lang-btn:hover, .install-btn:hover, .menu-btn:hover { background: var(--panel-strong); transform: translateY(-2px); }
+    .install-btn { display: none; }
 
     .btn {
       display: inline-flex;
@@ -153,6 +169,7 @@
       font-weight: 900;
       border: 1px solid var(--border);
       transition: transform .25s, box-shadow .25s, background .25s;
+      cursor: pointer;
     }
     .btn:hover { transform: translateY(-4px); }
     .btn-primary {
@@ -196,12 +213,15 @@
     .dot { width: 9px; height: 9px; background: var(--green); border-radius: 50%; box-shadow: 0 0 22px var(--green); }
 
     h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; letter-spacing: -.045em; }
+    html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 { font-family: Cairo, Inter, sans-serif; letter-spacing: 0; }
 
     .hero h1 {
       margin: 24px 0 16px;
       font-size: clamp(3.2rem, 8vw, 7.4rem);
       line-height: .88;
     }
+
+    html[dir="rtl"] .hero h1 { line-height: 1.02; }
 
     .gradient-text {
       background: linear-gradient(120deg, #fff, #b9c7ff 34%, var(--cyan) 68%, var(--gold));
@@ -270,6 +290,8 @@
       border: 1px solid rgba(255,255,255,.16);
       background: rgba(7,10,19,.78);
       box-shadow: 0 24px 70px rgba(0,0,0,.42);
+      direction: ltr;
+      text-align: left;
     }
     .window-top { display: flex; gap: 8px; padding: 14px; background: rgba(255,255,255,.08); }
     .window-top span { width: 11px; height: 11px; border-radius: 50%; background: var(--pink); }
@@ -282,7 +304,9 @@
 
     .section-head { max-width: 780px; margin-bottom: 42px; }
     .section-eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .2em; font-size: .78rem; font-weight: 900; margin-bottom: 12px; }
+    html[dir="rtl"] .section-eyebrow { letter-spacing: .06em; }
     .section-head h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1; }
+    html[dir="rtl"] .section-head h2 { line-height: 1.12; }
     .section-head p { color: var(--muted); margin-top: 18px; font-size: 1.05rem; }
 
     .grid { display: grid; gap: 18px; }
@@ -339,10 +363,27 @@
       overflow: hidden;
     }
     .contact-panel h2 { font-size: clamp(2.4rem, 6vw, 5rem); line-height: .95; margin-bottom: 18px; }
+    html[dir="rtl"] .contact-panel h2 { line-height: 1.1; }
     .contact-panel p { color: var(--muted); max-width: 650px; margin: 0 auto 28px; }
     .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
     footer { padding: 34px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(120%);
+      z-index: 200;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(7,10,19,.9);
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: .3s;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
 
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .75s ease, transform .75s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -369,6 +410,7 @@
       }
       .nav-links.open { display: flex; }
       .menu-btn { display: inline-flex; }
+      .install-btn { display: none !important; }
       section { padding: 80px 0; }
       .metrics, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: clamp(3rem, 16vw, 5rem); }
@@ -385,21 +427,26 @@
 <body>
   <div class="noise"></div>
   <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="toast" id="toast">Ready offline</div>
 
   <header>
     <div class="container nav">
       <a href="#home" class="brand" aria-label="Mahmoud portfolio home">
         <span class="brand-mark">M</span>
-        <span>Mahmoud.dev</span>
+        <span data-i18n="brand">Mahmoud.dev</span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#skills" data-i18n="navSkills">Skills</a>
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
       </nav>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+      <div class="nav-actions">
+        <button class="install-btn" id="installBtn" type="button" data-i18n="install">Install</button>
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Toggle language">AR</button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" data-i18n="menu">Menu</button>
+      </div>
     </div>
   </header>
 
@@ -407,17 +454,17 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="pill"><span class="dot"></span> Available for premium frontend work</div>
-          <h1><span class="gradient-text">Frontend Developer</span><br />building fast digital products.</h1>
-          <p>I create polished Vue.js and Nuxt.js web apps with strong UX, SEO structure, PWA support, responsive interfaces, and clean production-ready code.</p>
+          <div class="pill"><span class="dot"></span><span data-i18n="status">Available for premium frontend work</span></div>
+          <h1><span class="gradient-text" data-i18n="heroTitle">Frontend Developer</span><br /><span data-i18n="heroLine">building fast digital products.</span></h1>
+          <p data-i18n="heroDesc">I create polished Vue.js and Nuxt.js web apps with strong UX, SEO structure, PWA support, responsive interfaces, and clean production-ready code.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">View Projects →</a>
-            <a class="btn btn-ghost" href="#contact">Let’s Talk</a>
+            <a class="btn btn-primary" href="#projects" data-i18n="viewProjects">View Projects →</a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="letsTalk">Let’s Talk</a>
           </div>
           <div class="metrics">
-            <div class="metric"><strong>9+</strong><span>Featured projects</span></div>
-            <div class="metric"><strong>Vue/Nuxt</strong><span>Main stack</span></div>
-            <div class="metric"><strong>SEO + PWA</strong><span>Performance focus</span></div>
+            <div class="metric"><strong>9+</strong><span data-i18n="metricProjects">Featured projects</span></div>
+            <div class="metric"><strong>Vue/Nuxt</strong><span data-i18n="metricStack">Main stack</span></div>
+            <div class="metric"><strong>SEO + PWA</strong><span data-i18n="metricFocus">Performance focus</span></div>
           </div>
         </div>
 
@@ -441,15 +488,15 @@
     <section id="skills">
       <div class="container">
         <div class="section-head reveal">
-          <div class="section-eyebrow">Skills</div>
-          <h2>Modern frontend stack with product thinking.</h2>
-          <p>Not just pages — polished interfaces, clean state, responsive systems, and SEO-aware delivery.</p>
+          <div class="section-eyebrow" data-i18n="skillsEyebrow">Skills</div>
+          <h2 data-i18n="skillsTitle">Modern frontend stack with product thinking.</h2>
+          <p data-i18n="skillsDesc">Not just pages — polished interfaces, clean state, responsive systems, and SEO-aware delivery.</p>
         </div>
         <div class="grid skills-grid">
-          <article class="card reveal"><h3>Frontend Engineering</h3><p>Reusable components, clean layouts, responsive design, and production UI systems.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
-          <article class="card reveal"><h3>Vue Ecosystem</h3><p>Building scalable Vue and Nuxt applications with strong routing and page architecture.</p><div class="tags"><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span><span class="tag">SPA</span></div></article>
-          <article class="card reveal"><h3>SEO & Performance</h3><p>Metadata, schema, speed, accessibility, and pages built to be discoverable.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Schema</span><span class="tag">Core UX</span></div></article>
-          <article class="card reveal"><h3>PWA & UX Polish</h3><p>Installable experiences, smooth interactions, mobile-friendly navigation, and premium motion.</p><div class="tags"><span class="tag">PWA</span><span class="tag">UX</span><span class="tag">Motion</span></div></article>
+          <article class="card reveal"><h3 data-i18n="skill1Title">Frontend Engineering</h3><p data-i18n="skill1Desc">Reusable components, clean layouts, responsive design, and production UI systems.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+          <article class="card reveal"><h3 data-i18n="skill2Title">Vue Ecosystem</h3><p data-i18n="skill2Desc">Building scalable Vue and Nuxt applications with strong routing and page architecture.</p><div class="tags"><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span><span class="tag">SPA</span></div></article>
+          <article class="card reveal"><h3 data-i18n="skill3Title">SEO & Performance</h3><p data-i18n="skill3Desc">Metadata, schema, speed, accessibility, and pages built to be discoverable.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Schema</span><span class="tag">Core UX</span></div></article>
+          <article class="card reveal"><h3 data-i18n="skill4Title">PWA & UX Polish</h3><p data-i18n="skill4Desc">Installable experiences, smooth interactions, mobile-friendly navigation, and premium motion.</p><div class="tags"><span class="tag">PWA</span><span class="tag">UX</span><span class="tag">Motion</span></div></article>
         </div>
       </div>
     </section>
@@ -457,16 +504,16 @@
     <section id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <div class="section-eyebrow">Selected Work</div>
-          <h2>Projects designed to feel fast, clear, and premium.</h2>
+          <div class="section-eyebrow" data-i18n="projectsEyebrow">Selected Work</div>
+          <h2 data-i18n="projectsTitle">Projects designed to feel fast, clear, and premium.</h2>
         </div>
         <div class="grid projects-grid">
-          <article class="card project-card reveal"><div><div class="project-top"><h3>Book Store Platform</h3><span class="project-number">01</span></div><p>Multilingual commerce-style platform with SEO-focused structure and clean user flow.</p><div class="tags"><span class="tag">Nuxt</span><span class="tag">SEO</span><span class="tag">E-commerce</span></div></div><a class="project-link" href="https://www.ysk-book.com/en" target="_blank" rel="noopener">Open project →</a></article>
-          <article class="card project-card reveal"><div><div class="project-top"><h3>Comics Platform</h3><span class="project-number">02</span></div><p>Content platform and dashboard experience built for browsing, discovery, and management.</p><div class="tags"><span class="tag">Dashboard</span><span class="tag">Vue</span><span class="tag">Content</span></div></div><a class="project-link" href="https://www.ysk-comics.com/en" target="_blank" rel="noopener">Open project →</a></article>
-          <article class="card project-card reveal"><div><div class="project-top"><h3>Megatron Company</h3><span class="project-number">03</span></div><p>Corporate website experience with strong presentation, service pages, and modern layout.</p><div class="tags"><span class="tag">Corporate</span><span class="tag">UI</span><span class="tag">Responsive</span></div></div><a class="project-link" href="https://www.megatron-soft.com/en" target="_blank" rel="noopener">Open project →</a></article>
-          <article class="card project-card reveal"><div><div class="project-top"><h3>SADR Website</h3><span class="project-number">04</span></div><p>Website and dashboard work with professional interface structure and scalable content.</p><div class="tags"><span class="tag">Website</span><span class="tag">Dashboard</span><span class="tag">Nuxt</span></div></div><a class="project-link" href="https://www.sadr.com.sa/en" target="_blank" rel="noopener">Open project →</a></article>
-          <article class="card project-card reveal"><div><div class="project-top"><h3>Car Services Platform</h3><span class="project-number">05</span></div><p>Service platform with mobile-first browsing and Arabic user experience considerations.</p><div class="tags"><span class="tag">Arabic UX</span><span class="tag">Services</span><span class="tag">Mobile</span></div></div><a class="project-link" href="https://www.yaasta.com/ar" target="_blank" rel="noopener">Open project →</a></article>
-          <article class="card project-card reveal"><div><div class="project-top"><h3>YouLearnt</h3><span class="project-number">06</span></div><p>Learning platform experience focused on structured pages and clean content presentation.</p><div class="tags"><span class="tag">Education</span><span class="tag">UX</span><span class="tag">SEO</span></div></div><a class="project-link" href="https://youlearnt.com/en" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project1Title">Book Store Platform</h3><span class="project-number">01</span></div><p data-i18n="project1Desc">Multilingual commerce-style platform with SEO-focused structure and clean user flow.</p><div class="tags"><span class="tag">Nuxt</span><span class="tag">SEO</span><span class="tag">E-commerce</span></div></div><a class="project-link" href="https://www.ysk-book.com/en" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project2Title">Comics Platform</h3><span class="project-number">02</span></div><p data-i18n="project2Desc">Content platform and dashboard experience built for browsing, discovery, and management.</p><div class="tags"><span class="tag">Dashboard</span><span class="tag">Vue</span><span class="tag">Content</span></div></div><a class="project-link" href="https://www.ysk-comics.com/en" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project3Title">Megatron Company</h3><span class="project-number">03</span></div><p data-i18n="project3Desc">Corporate website experience with strong presentation, service pages, and modern layout.</p><div class="tags"><span class="tag">Corporate</span><span class="tag">UI</span><span class="tag">Responsive</span></div></div><a class="project-link" href="https://www.megatron-soft.com/en" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project4Title">SADR Website</h3><span class="project-number">04</span></div><p data-i18n="project4Desc">Website and dashboard work with professional interface structure and scalable content.</p><div class="tags"><span class="tag">Website</span><span class="tag">Dashboard</span><span class="tag">Nuxt</span></div></div><a class="project-link" href="https://www.sadr.com.sa/en" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project5Title">Car Services Platform</h3><span class="project-number">05</span></div><p data-i18n="project5Desc">Service platform with mobile-first browsing and Arabic user experience considerations.</p><div class="tags"><span class="tag">Arabic UX</span><span class="tag">Services</span><span class="tag">Mobile</span></div></div><a class="project-link" href="https://www.yaasta.com/ar" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3 data-i18n="project6Title">YouLearnt</h3><span class="project-number">06</span></div><p data-i18n="project6Desc">Learning platform experience focused on structured pages and clean content presentation.</p><div class="tags"><span class="tag">Education</span><span class="tag">UX</span><span class="tag">SEO</span></div></div><a class="project-link" href="https://youlearnt.com/en" target="_blank" rel="noopener" data-i18n="openProject">Open project →</a></article>
         </div>
       </div>
     </section>
@@ -474,13 +521,13 @@
     <section id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <div class="section-eyebrow">Experience</div>
-          <h2>Built around real delivery, not just visuals.</h2>
+          <div class="section-eyebrow" data-i18n="experienceEyebrow">Experience</div>
+          <h2 data-i18n="experienceTitle">Built around real delivery, not just visuals.</h2>
         </div>
         <div class="timeline">
-          <article class="card timeline-item reveal"><div class="timeline-date">Current Focus</div><div><h3>Premium Frontend Development</h3><p>Building polished portfolio, company, dashboard, and content-driven experiences using modern frontend workflows.</p></div></article>
-          <article class="card timeline-item reveal"><div class="timeline-date">Core Stack</div><div><h3>Vue.js / Nuxt.js Developer</h3><p>Specialized in frontend architecture, reusable UI, routing, SEO metadata, responsive layouts, and PWA-ready experiences.</p></div></article>
-          <article class="card timeline-item reveal"><div class="timeline-date">Product Quality</div><div><h3>Performance & UX Improvement</h3><p>Focused on making websites feel faster, cleaner, easier to use, and more professional on every screen size.</p></div></article>
+          <article class="card timeline-item reveal"><div class="timeline-date" data-i18n="timeline1Date">Current Focus</div><div><h3 data-i18n="timeline1Title">Premium Frontend Development</h3><p data-i18n="timeline1Desc">Building polished portfolio, company, dashboard, and content-driven experiences using modern frontend workflows.</p></div></article>
+          <article class="card timeline-item reveal"><div class="timeline-date" data-i18n="timeline2Date">Core Stack</div><div><h3 data-i18n="timeline2Title">Vue.js / Nuxt.js Developer</h3><p data-i18n="timeline2Desc">Specialized in frontend architecture, reusable UI, routing, SEO metadata, responsive layouts, and PWA-ready experiences.</p></div></article>
+          <article class="card timeline-item reveal"><div class="timeline-date" data-i18n="timeline3Date">Product Quality</div><div><h3 data-i18n="timeline3Title">Performance & UX Improvement</h3><p data-i18n="timeline3Desc">Focused on making websites feel faster, cleaner, easier to use, and more professional on every screen size.</p></div></article>
         </div>
       </div>
     </section>
@@ -488,11 +535,11 @@
     <section id="contact">
       <div class="container">
         <div class="contact-panel reveal">
-          <h2>Let’s build something premium.</h2>
-          <p>Need a high-quality frontend, landing page, dashboard, SEO-friendly website, or portfolio redesign? Let’s connect.</p>
+          <h2 data-i18n="contactTitle">Let’s build something premium.</h2>
+          <p data-i18n="contactDesc">Need a high-quality frontend, landing page, dashboard, SEO-friendly website, or portfolio redesign? Let’s connect.</p>
           <div class="contact-links">
-            <a class="btn btn-primary" href="mailto:mahnoudhouda5632@gmail.com">Email Me</a>
-            <a class="btn btn-ghost" href="https://github.com/mahmoudDeveloperM" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-primary" href="mailto:mahnoudhouda5632@gmail.com" data-i18n="emailMe">Email Me</a>
+            <a class="btn btn-ghost" href="https://github.com/MahmoudAbdalrhmanMohamed" target="_blank" rel="noopener">GitHub</a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/mahmoud-abdalrahman-2baa81197/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
@@ -501,27 +548,67 @@
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Mahmoud Abdelrahman. Crafted with premium frontend detail.</div>
+    <div class="container"><span data-i18n="footerPrefix">©</span> <span id="year"></span> <span data-i18n="footerText">Mahmoud Abdelrahman. Crafted with premium frontend detail.</span></div>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        brand: 'Mahmoud.dev', navHome: 'Home', navSkills: 'Skills', navProjects: 'Projects', navExperience: 'Experience', navContact: 'Contact', install: 'Install', menu: 'Menu', close: 'Close', status: 'Available for premium frontend work', heroTitle: 'Frontend Developer', heroLine: 'building fast digital products.', heroDesc: 'I create polished Vue.js and Nuxt.js web apps with strong UX, SEO structure, PWA support, responsive interfaces, and clean production-ready code.', viewProjects: 'View Projects →', letsTalk: 'Let’s Talk', metricProjects: 'Featured projects', metricStack: 'Main stack', metricFocus: 'Performance focus', skillsEyebrow: 'Skills', skillsTitle: 'Modern frontend stack with product thinking.', skillsDesc: 'Not just pages — polished interfaces, clean state, responsive systems, and SEO-aware delivery.', skill1Title: 'Frontend Engineering', skill1Desc: 'Reusable components, clean layouts, responsive design, and production UI systems.', skill2Title: 'Vue Ecosystem', skill2Desc: 'Building scalable Vue and Nuxt applications with strong routing and page architecture.', skill3Title: 'SEO & Performance', skill3Desc: 'Metadata, schema, speed, accessibility, and pages built to be discoverable.', skill4Title: 'PWA & UX Polish', skill4Desc: 'Installable experiences, smooth interactions, mobile-friendly navigation, and premium motion.', projectsEyebrow: 'Selected Work', projectsTitle: 'Projects designed to feel fast, clear, and premium.', project1Title: 'Book Store Platform', project1Desc: 'Multilingual commerce-style platform with SEO-focused structure and clean user flow.', project2Title: 'Comics Platform', project2Desc: 'Content platform and dashboard experience built for browsing, discovery, and management.', project3Title: 'Megatron Company', project3Desc: 'Corporate website experience with strong presentation, service pages, and modern layout.', project4Title: 'SADR Website', project4Desc: 'Website and dashboard work with professional interface structure and scalable content.', project5Title: 'Car Services Platform', project5Desc: 'Service platform with mobile-first browsing and Arabic user experience considerations.', project6Title: 'YouLearnt', project6Desc: 'Learning platform experience focused on structured pages and clean content presentation.', openProject: 'Open project →', experienceEyebrow: 'Experience', experienceTitle: 'Built around real delivery, not just visuals.', timeline1Date: 'Current Focus', timeline1Title: 'Premium Frontend Development', timeline1Desc: 'Building polished portfolio, company, dashboard, and content-driven experiences using modern frontend workflows.', timeline2Date: 'Core Stack', timeline2Title: 'Vue.js / Nuxt.js Developer', timeline2Desc: 'Specialized in frontend architecture, reusable UI, routing, SEO metadata, responsive layouts, and PWA-ready experiences.', timeline3Date: 'Product Quality', timeline3Title: 'Performance & UX Improvement', timeline3Desc: 'Focused on making websites feel faster, cleaner, easier to use, and more professional on every screen size.', contactTitle: 'Let’s build something premium.', contactDesc: 'Need a high-quality frontend, landing page, dashboard, SEO-friendly website, or portfolio redesign? Let’s connect.', emailMe: 'Email Me', footerPrefix: '©', footerText: 'Mahmoud Abdelrahman. Crafted with premium frontend detail.', offlineReady: 'Ready offline', installReady: 'App is ready to install'
+      },
+      ar: {
+        brand: 'محمود.dev', navHome: 'الرئيسية', navSkills: 'المهارات', navProjects: 'الأعمال', navExperience: 'الخبرة', navContact: 'تواصل', install: 'تثبيت', menu: 'القائمة', close: 'إغلاق', status: 'متاح لأعمال واجهات احترافية', heroTitle: 'مطوّر واجهات أمامية', heroLine: 'يبني منتجات رقمية سريعة.', heroDesc: 'أصمم تطبيقات Vue.js و Nuxt.js بواجهة راقية، وتجربة استخدام قوية، وتحسين SEO، ودعم PWA، وتصميم متجاوب، وكود جاهز للإنتاج.', viewProjects: 'شاهد الأعمال ←', letsTalk: 'لنتحدث', metricProjects: 'مشاريع مميزة', metricStack: 'التقنيات الأساسية', metricFocus: 'تركيز على الأداء', skillsEyebrow: 'المهارات', skillsTitle: 'تقنيات واجهات حديثة مع تفكير منتج.', skillsDesc: 'ليس مجرد صفحات — واجهات مصقولة، تنظيم نظيف، أنظمة متجاوبة، وتسليم يدعم SEO.', skill1Title: 'هندسة الواجهات', skill1Desc: 'مكونات قابلة لإعادة الاستخدام، تخطيطات نظيفة، تصميم متجاوب، وأنظمة واجهات إنتاجية.', skill2Title: 'منظومة Vue', skill2Desc: 'بناء تطبيقات Vue و Nuxt قابلة للتوسع مع تنظيم قوي للصفحات والمسارات.', skill3Title: 'SEO والأداء', skill3Desc: 'بيانات وصفية، Schema، سرعة، وصولية، وصفحات قابلة للاكتشاف.', skill4Title: 'PWA وتجربة المستخدم', skill4Desc: 'تجارب قابلة للتثبيت، تفاعلات ناعمة، تنقل مناسب للموبايل، وحركة احترافية.', projectsEyebrow: 'أعمال مختارة', projectsTitle: 'مشاريع مصممة لتبدو سريعة وواضحة واحترافية.', project1Title: 'منصة متجر كتب', project1Desc: 'منصة متعددة اللغات بطابع تجاري مع بنية قوية لـ SEO وتجربة استخدام واضحة.', project2Title: 'منصة كوميكس', project2Desc: 'منصة محتوى ولوحة تحكم للتصفح والاكتشاف والإدارة.', project3Title: 'شركة Megatron', project3Desc: 'موقع شركة بعرض قوي للخدمات وتصميم حديث.', project4Title: 'موقع SADR', project4Desc: 'موقع ولوحة تحكم بواجهة احترافية وبنية محتوى قابلة للتوسع.', project5Title: 'منصة خدمات سيارات', project5Desc: 'منصة خدمات بتجربة عربية واهتمام كبير بالموبايل.', project6Title: 'YouLearnt', project6Desc: 'منصة تعليمية تركز على تنظيم المحتوى وعرضه بشكل واضح.', openProject: 'افتح المشروع ←', experienceEyebrow: 'الخبرة', experienceTitle: 'مبني على تسليم حقيقي وليس الشكل فقط.', timeline1Date: 'التركيز الحالي', timeline1Title: 'تطوير واجهات احترافي', timeline1Desc: 'بناء بورتفوليوهات ومواقع شركات ولوحات تحكم وتجارب محتوى باستخدام أدوات واجهات حديثة.', timeline2Date: 'التقنيات الأساسية', timeline2Title: 'مطوّر Vue.js / Nuxt.js', timeline2Desc: 'متخصص في بنية الواجهات، المكونات القابلة لإعادة الاستخدام، المسارات، SEO، التصميم المتجاوب، وتجارب PWA.', timeline3Date: 'جودة المنتج', timeline3Title: 'تحسين الأداء وتجربة المستخدم', timeline3Desc: 'التركيز على جعل المواقع أسرع وأنظف وأسهل استخدامًا وأكثر احترافية على كل الشاشات.', contactTitle: 'لنصنع شيئًا احترافيًا.', contactDesc: 'تحتاج واجهة عالية الجودة، صفحة هبوط، لوحة تحكم، موقع يدعم SEO، أو إعادة تصميم بورتفوليو؟ تواصل معي.', emailMe: 'راسلني', footerPrefix: '©', footerText: 'محمود عبد الرحمن. صُنع بتفاصيل واجهات احترافية.', offlineReady: 'جاهز للعمل بدون إنترنت', installReady: 'التطبيق جاهز للتثبيت'
+      }
+    };
+
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
     const links = document.querySelectorAll('.nav-links a');
     const year = document.getElementById('year');
     const cursorGlow = document.getElementById('cursorGlow');
+    const langBtn = document.getElementById('langBtn');
+    const installBtn = document.getElementById('installBtn');
+    const toast = document.getElementById('toast');
+    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    let deferredPrompt = null;
 
     year.textContent = new Date().getFullYear();
 
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio-lang', lang);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      langBtn.textContent = lang === 'en' ? 'AR' : 'EN';
+      menuBtn.textContent = translations[lang].menu;
+      installBtn.textContent = translations[lang].install;
+    }
+
+    applyLanguage(currentLang);
+
+    langBtn.addEventListener('click', () => {
+      applyLanguage(currentLang === 'en' ? 'ar' : 'en');
+    });
+
     menuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('open');
-      menuBtn.textContent = navLinks.classList.contains('open') ? 'Close' : 'Menu';
+      menuBtn.textContent = navLinks.classList.contains('open') ? translations[currentLang].close : translations[currentLang].menu;
     });
 
     links.forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        menuBtn.textContent = 'Menu';
+        menuBtn.textContent = translations[currentLang].menu;
       });
     });
 
@@ -548,6 +635,37 @@
     }, { threshold: 0.45 });
 
     sections.forEach(section => activeObserver.observe(section));
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      installBtn.style.display = 'inline-flex';
+      showToast(translations[currentLang].installReady);
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBtn.style.display = 'none';
+    });
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      installBtn.style.display = 'none';
+    });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        try {
+          await navigator.serviceWorker.register('./sw.js');
+          showToast(translations[currentLang].offlineReady);
+        } catch (error) {
+          console.warn('Service worker registration failed:', error);
+        }
+      });
+    }
   </script>
 </body>
 </html>
