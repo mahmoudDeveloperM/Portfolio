@@ -1,1564 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Mahmoud Abdelrahman is a frontend developer specialized in Vue.js and Nuxt.js, building fast, multilingual, SEO-focused web applications and PWAs."
-    />
-    <meta
-      name="keywords"
-      content="Frontend Developer, Vue.js, Nuxt.js, JavaScript, Web Development, PWA, SEO, Portfolio, Mahmoud Abdelrahman"
-    />
-    <meta name="author" content="Mahmoud Abdelrahman" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mahmoud Abdelrahman is a Frontend Developer specializing in Vue.js, Nuxt.js, SEO, PWA, and premium web experiences." />
+  <meta name="keywords" content="Mahmoud Abdelrahman, Frontend Developer, Vue.js, Nuxt.js, JavaScript, PWA, SEO, Portfolio" />
+  <meta name="author" content="Mahmoud Abdelrahman" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mahmoud Abdelrahman | Premium Frontend Developer Portfolio" />
+  <meta property="og:description" content="Premium frontend portfolio for Vue.js, Nuxt.js, SEO, PWA, and modern web applications." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Mahmoud Abdelrahman | Premium Frontend Developer</title>
 
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://mahmouddeveloperm.github.io/Portfolio/"
-    />
-    <meta
-      property="og:title"
-      content="Mahmoud Abdelrahman | Vue.js & Nuxt.js Frontend Developer"
-    />
-    <meta
-      property="og:description"
-      content="Professional Frontend Developer specializing in Vue.js and Nuxt.js. Check out my portfolio of responsive, multilingual web applications."
-    />
-    <meta
-      property="og:image"
-      content="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
-    />
-    <meta property="og:image:alt" content="Developer portfolio visual cover" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Mahmoud Abdelrahman Portfolio" />
-    <meta property="og:updated_time" content="2026-04-11T00:00:00+00:00" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@mahmoud_dev" />
-    <meta name="twitter:creator" content="@mahmoud_dev" />
-    <meta
-      name="twitter:title"
-      content="Mahmoud Abdelrahman | Vue.js & Nuxt.js Frontend Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Professional Frontend Developer specializing in Vue.js and Nuxt.js. Check out my portfolio of responsive, multilingual web applications."
-    />
-    <meta
-      name="twitter:image"
-      content="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Developer portfolio visual cover"
-    />
+  <style>
+    :root {
+      --bg: #070a13;
+      --bg-2: #0b1020;
+      --panel: rgba(255, 255, 255, 0.075);
+      --panel-strong: rgba(255, 255, 255, 0.11);
+      --border: rgba(255, 255, 255, 0.13);
+      --text: #f8fbff;
+      --muted: #9aa7bd;
+      --primary: #7c3aed;
+      --cyan: #22d3ee;
+      --gold: #f59e0b;
+      --pink: #ec4899;
+      --green: #34d399;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+      --radius: 28px;
+    }
 
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://mahmouddeveloperm.github.io/Portfolio/"
-    />
-    <link
-      rel="sitemap"
-      type="application/xml"
-      href="https://mahmouddeveloperm.github.io/Portfolio/sitemap.xml"
-    />
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
 
-    <!-- Favicon and App Icons -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="favicon.svg" />
-    <link
-      rel="apple-touch-icon"
-      href="https://img.icons8.com/fluency/180/000000/code.png"
-    />
-    <link rel="manifest" href="site.webmanifest" />
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        radial-gradient(circle at 20% 12%, rgba(124, 58, 237, .25), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(34, 211, 238, .2), transparent 32%),
+        radial-gradient(circle at 55% 90%, rgba(245, 158, 11, .14), transparent 35%),
+        var(--bg);
+      background-size: 42px 42px, 42px 42px, auto, auto, auto, auto;
+    }
 
-    <!-- Theme Color for Mobile Browsers -->
-    <meta name="theme-color" content="#0f766e" />
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: .07;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
 
-    <!-- PWA Meta Tags -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Mahmoud Abdelrahman" />
-    <meta name="application-name" content="Mahmoud Abdelrahman" />
+    .cursor-glow {
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,211,238,.18), transparent 60%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      transition: opacity .25s;
+    }
 
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mahmoud Abdelrahman",
-        "jobTitle": "Frontend Developer",
-        "url": "https://mahmouddeveloperm.github.io/Portfolio/",
-        "sameAs": [
-          "https://github.com/mahmoudDeveloperM",
-          "https://www.linkedin.com/in/mahmoud-abdalrahman-2baa81197/"
-        ],
-        "description": "Professional Frontend Developer specializing in Vue.js and Nuxt.js development.",
-        "skills": [
-          "Vue.js",
-          "Nuxt.js",
-          "JavaScript",
-          "HTML5",
-          "CSS3",
-          "PWA",
-          "SEO"
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Megatron Company"
-        },
-        "image": "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://mahmouddeveloperm.github.io/Portfolio/#website",
-            "url": "https://mahmouddeveloperm.github.io/Portfolio/",
-            "name": "Mahmoud Abdelrahman Portfolio",
-            "inLanguage": "en"
-          },
-          {
-            "@type": "ItemList",
-            "name": "Featured Projects",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Book Store Platform",
-                "url": "https://www.ysk-book.com/en"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Comics Platform and Dashboard",
-                "url": "https://www.ysk-comics.com/en"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Megatron Company",
-                "url": "https://www.megatron-soft.com/en"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Shahin Furniture Company",
-                "url": "https://www.shahin-furniture.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "El-Doc Store",
-                "url": "https://www.el-doc.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 6,
-                "name": "SADR Website and Dashboard",
-                "url": "https://www.sadr.com.sa/en"
-              },
-              {
-                "@type": "ListItem",
-                "position": 7,
-                "name": "Car Services Platform",
-                "url": "https://www.yaasta.com/ar"
-              },
-              {
-                "@type": "ListItem",
-                "position": 8,
-                "name": "Ideal Stores",
-                "url": "https://www.idealstores.com.sa/en"
-              },
-              {
-                "@type": "ListItem",
-                "position": 9,
-                "name": "YouLearnt",
-                "url": "https://youlearnt.com/en"
-              }
-            ]
-          }
-        ]
-      }
-    </script>
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,10,19,.62);
+      backdrop-filter: blur(18px);
+    }
 
-    <!-- Title with SEO optimization -->
-    <title>
-      Mahmoud Abdelrahman | Vue.js & Nuxt.js Frontend Developer Portfolio
-    </title>
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-    <!-- Rest of your head content -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
 
-      :root {
-        --primary: #0f766e;
-        --secondary: #ea580c;
-        --accent: #0ea5a2;
-        --dark: #f8f5ee;
-        --dark-light: #fffaf0;
-        --gray: #e7dfd1;
-        --light-gray: #6b7280;
-        --text: #1e293b;
-        --text-muted: #475569;
-        --scroll-track: #ebe4d7;
-        --scroll-thumb: linear-gradient(180deg, #0f766e, #0ea5a2);
-        --scroll-thumb-hover: linear-gradient(180deg, #0b5f5a, #0b8d89);
-      }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      box-shadow: 0 16px 40px rgba(124,58,237,.35);
+    }
 
-      html {
-        scroll-behavior: smooth;
-        scrollbar-width: thin;
-        scrollbar-color: #0f766e #ebe4d7;
-        scrollbar-gutter: stable;
-      }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: .25s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,.08); }
 
-      html::-webkit-scrollbar {
-        width: 12px;
-      }
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 800;
+    }
 
-      html::-webkit-scrollbar-track {
-        background: var(--scroll-track);
-      }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      border: 1px solid var(--border);
+      transition: transform .25s, box-shadow .25s, background .25s;
+    }
+    .btn:hover { transform: translateY(-4px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      color: white;
+      border: 0;
+      box-shadow: 0 18px 42px rgba(124,58,237,.36);
+    }
+    .btn-ghost { background: var(--panel); color: var(--text); backdrop-filter: blur(16px); }
 
-      html::-webkit-scrollbar-thumb {
-        background: var(--scroll-thumb);
-        border-radius: 999px;
-        border: 2px solid var(--scroll-track);
-        min-height: 44px;
-      }
+    section { padding: 110px 0; scroll-margin-top: 86px; }
 
-      html::-webkit-scrollbar-thumb:hover {
-        background: var(--scroll-thumb-hover);
-      }
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding-top: 120px;
+      position: relative;
+    }
 
-      html::-webkit-scrollbar-corner {
-        background: var(--scroll-track);
-      }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: center;
+    }
 
-      body {
-        font-family: "Manrope", "Segoe UI", sans-serif;
-        background: radial-gradient(
-            circle at 8% 12%,
-            rgba(234, 88, 12, 0.14) 0%,
-            transparent 36%
-          ),
-          radial-gradient(
-            circle at 90% 20%,
-            rgba(15, 118, 110, 0.18) 0%,
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 58% 88%,
-            rgba(14, 165, 162, 0.15) 0%,
-            transparent 35%
-          ),
-          var(--dark);
-        color: var(--text);
-        overflow-x: hidden;
-        line-height: 1.6;
-      }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .88rem;
+      backdrop-filter: blur(14px);
+    }
+    .dot { width: 9px; height: 9px; background: var(--green); border-radius: 50%; box-shadow: 0 0 22px var(--green); }
 
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(
-            to right,
-            rgba(148, 163, 184, 0.07) 1px,
-            transparent 1px
-          ),
-          linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
-        background-size: 42px 42px;
-        z-index: -1;
-      }
+    h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; letter-spacing: -.045em; }
 
-      .skip-link {
-        position: absolute;
-        left: 1rem;
-        top: -120px;
-        background: #0f172a;
-        color: #ffffff;
-        padding: 0.65rem 0.9rem;
-        border-radius: 0.55rem;
-        font-weight: 700;
-        text-decoration: none;
-        z-index: 2000;
-      }
+    .hero h1 {
+      margin: 24px 0 16px;
+      font-size: clamp(3.2rem, 8vw, 7.4rem);
+      line-height: .88;
+    }
 
-      .skip-link:focus {
-        top: 1rem;
-      }
+    .gradient-text {
+      background: linear-gradient(120deg, #fff, #b9c7ff 34%, var(--cyan) 68%, var(--gold));
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 54px rgba(34,211,238,.22);
+    }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.14rem;
+      margin-bottom: 30px;
+    }
 
-      section {
-        scroll-margin-top: 92px;
-      }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
 
-      /* Navigation */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 650px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      backdrop-filter: blur(16px);
+    }
+    .metric strong { display: block; font-size: 1.45rem; }
+    .metric span { color: var(--muted); font-size: .86rem; }
 
-      nav {
-        position: relative;
-        width: 100%;
-        padding: 1.5rem 0;
-        background: rgba(248, 245, 238, 0.82);
-        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-        backdrop-filter: blur(14px);
-        transition: all 0.3s ease;
-      }
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 36px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.045)),
+        radial-gradient(circle at 30% 20%, rgba(124,58,237,.32), transparent 38%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+    }
 
-      nav.scrolled {
-        background: rgba(248, 245, 238, 0.95);
-        padding: 1rem 0;
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-      }
+    .hero-card::before, .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(8px);
+      opacity: .9;
+      animation: float 7s ease-in-out infinite;
+    }
+    .hero-card::before { width: 190px; height: 190px; right: 30px; top: 44px; background: linear-gradient(135deg, var(--cyan), var(--primary)); }
+    .hero-card::after { width: 130px; height: 130px; left: 40px; bottom: 68px; background: linear-gradient(135deg, var(--gold), var(--pink)); animation-delay: -2s; }
 
-      .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-      }
+    .code-window {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 110px;
+      z-index: 3;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(7,10,19,.78);
+      box-shadow: 0 24px 70px rgba(0,0,0,.42);
+    }
+    .window-top { display: flex; gap: 8px; padding: 14px; background: rgba(255,255,255,.08); }
+    .window-top span { width: 11px; height: 11px; border-radius: 50%; background: var(--pink); }
+    .window-top span:nth-child(2) { background: var(--gold); }
+    .window-top span:nth-child(3) { background: var(--green); }
+    pre { padding: 22px; color: #d9e4ff; font-size: .92rem; overflow: auto; }
+    .cyan { color: var(--cyan); } .purple { color: #c4b5fd; } .gold { color: var(--gold); } .green { color: var(--green); }
 
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #ffffff;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        width: 2.7rem;
-        height: 2.7rem;
-        border-radius: 999px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 22px rgba(15, 118, 110, 0.28);
-        text-decoration: none;
-      }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-24px) rotate(8deg); } }
 
+    .section-head { max-width: 780px; margin-bottom: 42px; }
+    .section-eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .2em; font-size: .78rem; font-weight: 900; margin-bottom: 12px; }
+    .section-head h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1; }
+    .section-head p { color: var(--muted); margin-top: 18px; font-size: 1.05rem; }
+
+    .grid { display: grid; gap: 18px; }
+    .skills-grid { grid-template-columns: repeat(4, 1fr); }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      position: relative;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 26px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 54px rgba(0,0,0,.22);
+      overflow: hidden;
+      transition: .28s;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 0%, rgba(34,211,238,.15), transparent 36%);
+      opacity: 0;
+      transition: .28s;
+    }
+    .card:hover { transform: translateY(-10px); border-color: rgba(34,211,238,.35); box-shadow: 0 30px 80px rgba(34,211,238,.12); }
+    .card:hover::before { opacity: 1; }
+    .card > * { position: relative; z-index: 2; }
+    .card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .card p { color: var(--muted); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { padding: 7px 10px; border-radius: 999px; color: #dbeafe; background: rgba(124,58,237,.16); border: 1px solid rgba(124,58,237,.26); font-size: .82rem; font-weight: 800; }
+
+    .project-card { min-height: 330px; display: flex; flex-direction: column; justify-content: space-between; }
+    .project-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+    .project-number { color: rgba(255,255,255,.18); font-size: 2.5rem; font-weight: 900; line-height: 1; }
+    .project-link { color: var(--cyan); font-weight: 900; margin-top: 18px; display: inline-flex; }
+
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { display: grid; grid-template-columns: 180px 1fr; gap: 22px; align-items: start; }
+    .timeline-date { color: var(--gold); font-weight: 900; }
+
+    .contact-panel {
+      border-radius: 38px;
+      padding: clamp(30px, 6vw, 70px);
+      background:
+        linear-gradient(135deg, rgba(124,58,237,.24), rgba(34,211,238,.12)),
+        var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-panel h2 { font-size: clamp(2.4rem, 6vw, 5rem); line-height: .95; margin-bottom: 18px; }
+    .contact-panel p { color: var(--muted); max-width: 650px; margin: 0 auto 28px; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    footer { padding: 34px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 960px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-card { min-height: 430px; }
+      .skills-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
       .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .nav-toggle {
+        position: absolute;
+        top: 76px;
+        left: 20px;
+        right: 20px;
         display: none;
-        background: rgba(15, 118, 110, 0.12);
-        border: 1px solid rgba(15, 118, 110, 0.3);
-        color: var(--text);
-        border-radius: 12px;
-        padding: 0.55rem 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
+        flex-direction: column;
+        background: rgba(7,10,19,.94);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 14px;
       }
-
-      .nav-toggle:focus-visible {
-        outline: 2px solid rgba(15, 118, 110, 0.55);
-        outline-offset: 2px;
-      }
-
-      .nav-mobile {
-        display: none;
-      }
-
-      .nav-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-weight: 700;
-        position: relative;
-        padding: 0.35rem 0.7rem;
-        border-radius: 999px;
-        transition: color 0.3s ease, background-color 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-        background: rgba(15, 118, 110, 0.12);
-      }
-
-      .nav-links a.active {
-        color: var(--text);
-        background: rgba(15, 118, 110, 0.16);
-      }
-
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: width 0.3s ease;
-      }
-
-      .nav-links a:hover::after {
-        width: 100%;
-      }
-
-      /* Hero Section */
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-            circle at 20% 10%,
-            rgba(234, 88, 12, 0.22) 0%,
-            transparent 52%
-          ),
-          radial-gradient(
-            circle at 82% 86%,
-            rgba(15, 118, 110, 0.2) 0%,
-            transparent 55%
-          );
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 680px;
-      }
-
-      .hero-title {
-        font-size: clamp(3rem, 8vw, 6rem);
-        font-weight: 800;
-        font-family: "Syne", "Segoe UI", sans-serif;
-        letter-spacing: -0.02em;
-        line-height: 1.1;
-        margin-bottom: 1rem;
-        overflow-wrap: anywhere;
-        background: linear-gradient(120deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-subtitle {
-        font-size: clamp(1.2rem, 3vw, 2rem);
-        color: #0f766e;
-        margin-bottom: 2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        overflow-wrap: anywhere;
-      }
-
-      .hero-description {
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        margin-bottom: 3rem;
-        max-width: 600px;
-        overflow-wrap: anywhere;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        color: #ffffff;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 800;
-        letter-spacing: 0.01em;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 16px 34px rgba(15, 118, 110, 0.32);
-      }
-
-      .cta-button:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 18px 34px rgba(15, 118, 110, 0.4);
-      }
-
-      .cta-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .cta-button:hover::before {
-        left: 100%;
-      }
-
-      /* Skills Section */
-      .skills {
-        padding: 8rem 0;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 250, 240, 0.55) 0%,
-          rgba(255, 255, 255, 0.3) 100%
-        );
-      }
-
-      .section-title {
-        font-size: 3rem;
-        font-weight: 700;
-        font-family: "Syne", "Segoe UI", sans-serif;
-        letter-spacing: -0.02em;
-        text-align: center;
-        margin-bottom: 4rem;
-        background: linear-gradient(120deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
-        margin-top: 4rem;
-      }
-
-      .skill-card {
-        background: rgba(255, 255, 255, 0.72);
-        padding: 2rem;
-        border-radius: 24px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(148, 163, 184, 0.26);
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .skill-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .skill-card:hover::before {
-        opacity: 0.08;
-      }
-
-      .skill-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 24px 42px rgba(15, 118, 110, 0.2);
-      }
-
-      .skill-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--primary);
-        position: relative;
-        z-index: 2;
-      }
-
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      .skill-tag {
-        background: rgba(15, 118, 110, 0.12);
-        color: #0f766e;
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        border: 1px solid rgba(15, 118, 110, 0.35);
-      }
-
-      /* About Section */
-      .about {
-        padding: 8rem 0;
-      }
-
-      .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .about-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-muted);
-      }
-
-      .about-text h2 {
-        color: var(--primary);
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-family: "Syne", "Segoe UI", sans-serif;
-      }
-
-      .about-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-
-      .stat-card {
-        text-align: center;
-        padding: 2rem;
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: 18px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(148, 163, 184, 0.26);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-      }
-
-      .stat-number {
-        font-size: 3rem;
-        font-weight: 700;
-        color: var(--primary);
-        display: block;
-      }
-
-      .stat-label {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Projects Section */
-      .projects {
-        padding: 8rem 0;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.45) 0%,
-          rgba(255, 250, 240, 0.72) 100%
-        );
-      }
-
-      .project-card {
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: 24px;
-        overflow: hidden;
-        margin-bottom: 3rem;
-        position: relative;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(148, 163, 184, 0.24);
-        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
-        transition: all 0.3s ease;
-      }
-
-      .project-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-      }
-
-      .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 22px 36px rgba(14, 116, 144, 0.18);
-      }
-
-      .project-content {
-        padding: 2rem;
-      }
-
-      .project-title {
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .project-description {
-        color: var(--text-muted);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-      }
-
-      .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .tech-tag {
-        background: rgba(14, 165, 162, 0.14);
-        color: #0f766e;
-        padding: 0.3rem 0.8rem;
-        border-radius: 15px;
-        font-size: 0.8rem;
-        border: 1px solid rgba(14, 165, 162, 0.4);
-      }
-
-      .project-links {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .project-link {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .project-link:hover {
-        color: var(--secondary);
-      }
-
-      /* Contact Section */
-      .contact {
-        padding: 8rem 0;
-      }
-
-      .contact-content {
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .contact-title {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .contact-description {
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        margin-bottom: 3rem;
-      }
-
-      .contact-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-
-      .contact-link {
-        background: rgba(255, 255, 255, 0.78);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        color: var(--text);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(148, 163, 184, 0.24);
-        font-weight: 700;
-      }
-
-      .contact-link:hover {
-        background: var(--primary);
-        color: #ffffff;
-        transform: translateY(-2px);
-      }
-
-      /* Footer */
-      footer {
-        padding: 2rem 0;
-        background: rgba(255, 250, 240, 0.75);
-        text-align: center;
-        color: var(--text-muted);
-        border-top: 1px solid rgba(148, 163, 184, 0.24);
-      }
-
-      /* Responsive */
-      @media (max-width: 1024px) {
-        .hero {
-          min-height: auto;
-          padding: 6.5rem 0 4rem;
-        }
-
-        .hero-description {
-          max-width: 520px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 0 1.4rem;
-        }
-
-        nav {
-          padding: 1rem 0;
-        }
-
-        nav.scrolled {
-          padding: 0.8rem 0;
-        }
-
-        .nav-links {
-          display: none;
-        }
-
-        .nav-content {
-          align-items: center;
-        }
-
-        .nav-toggle {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.35rem;
-        }
-
-        .nav-mobile {
-          display: none;
-          flex-direction: column;
-          gap: 0.4rem;
-          padding: 0.8rem 0 0.4rem;
-        }
-
-        .nav-mobile.is-open {
-          display: flex;
-        }
-
-        .nav-mobile a {
-          text-decoration: none;
-          color: var(--text);
-          font-weight: 700;
-          padding: 0.5rem 0.6rem;
-          border-radius: 10px;
-          background: rgba(15, 118, 110, 0.08);
-        }
-
-        .hero {
-          min-height: auto;
-          padding: 4.8rem 0 2.6rem;
-        }
-
-        .hero-content {
-          text-align: left;
-          max-width: 100%;
-        }
-
-        .hero-title {
-          font-size: clamp(1.9rem, 8.5vw, 3rem);
-          line-height: 1.05;
-        }
-
-        .hero-subtitle {
-          font-size: 0.78rem;
-          letter-spacing: 0.16em;
-          margin-bottom: 0.9rem;
-        }
-
-        .hero-description {
-          font-size: 0.95rem;
-          margin-bottom: 1.4rem;
-          max-width: 100%;
-        }
-
-        .cta-button {
-          width: 100%;
-          text-align: center;
-        }
-
-        .about-content {
-          grid-template-columns: 1fr;
-        }
-
-        .about-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-links {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          padding: 0 1.1rem;
-        }
-
-        nav {
-          padding: 0.85rem 0;
-        }
-
-        .nav-content {
-          gap: 0.6rem;
-        }
-
-        .hero {
-          padding: 4.4rem 0 2.2rem;
-        }
-
-        .hero-title {
-          font-size: clamp(1.7rem, 9.6vw, 2.5rem);
-        }
-
-        .hero-subtitle {
-          font-size: 0.72rem;
-          letter-spacing: 0.18em;
-        }
-
-        .hero-description {
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .hero {
-          padding: 4rem 0 2rem;
-        }
-
-        .hero-title {
-          font-size: clamp(1.55rem, 11vw, 2.2rem);
-        }
-
-        .cta-button {
-          padding: 0.9rem 1.4rem;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
-
-      /* Animations */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-    </style>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header>
-      <nav id="navbar" aria-label="Primary navigation">
-        <div class="container">
-          <div class="nav-content">
-            <a href="#" class="logo" aria-label="Mahmoud Abdelrahman home">MA</a>
-            <button
-              class="nav-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-            >
-              Menu
-            </button>
-            <ul class="nav-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div id="mobile-menu" class="nav-mobile" aria-hidden="true">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
+      .nav-links.open { display: flex; }
+      .menu-btn { display: inline-flex; }
+      section { padding: 80px 0; }
+      .metrics, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(3rem, 16vw, 5rem); }
+      .hero-card { min-height: 360px; }
+      .code-window { left: 18px; right: 18px; top: 74px; }
+      pre { font-size: .78rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Mahmoud portfolio home">
+        <span class="brand-mark">M</span>
+        <span>Mahmoud.dev</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+    </div>
+  </header>
 
-    <main id="main-content">
-      <section id="home" class="hero">
-      <div class="hero-bg"></div>
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Mahmoud Abdelrahman<br />Frontend Developer</h1>
-          <p class="hero-subtitle">Vue.js, Nuxt.js, SEO, and Performance</p>
-          <p class="hero-description">
-            Crafting modern web experiences with cutting-edge technologies.
-            Specializing in Vue.js and Nuxt.js development, creating responsive,
-            multilingual, and SEO-friendly applications that deliver exceptional
-            user experiences.
-          </p>
-          <a href="#projects" class="cta-button">View My Work</a>
-        </div>
-      </div>
-      </section>
-
-      <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Frontend Development</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">Nuxt.js</span>
-              <span class="skill-tag">Tailwind CSS</span>
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="pill"><span class="dot"></span> Available for premium frontend work</div>
+          <h1><span class="gradient-text">Frontend Developer</span><br />building fast digital products.</h1>
+          <p>I create polished Vue.js and Nuxt.js web apps with strong UX, SEO structure, PWA support, responsive interfaces, and clean production-ready code.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects →</a>
+            <a class="btn btn-ghost" href="#contact">Let’s Talk</a>
           </div>
-          <div class="skill-card">
-            <h3>State Management & Tools</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Pinia</span>
-              <span class="skill-tag">Vite</span>
-              <span class="skill-tag">Git/GitHub</span>
-              <span class="skill-tag">VS Code</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Advanced Features</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">PWA</span>
-              <span class="skill-tag">i18n</span>
-              <span class="skill-tag">SEO</span>
-              <span class="skill-tag">SSR/SPA</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">MongoDB</span>
-            </div>
+          <div class="metrics">
+            <div class="metric"><strong>9+</strong><span>Featured projects</span></div>
+            <div class="metric"><strong>Vue/Nuxt</strong><span>Main stack</span></div>
+            <div class="metric"><strong>SEO + PWA</strong><span>Performance focus</span></div>
           </div>
         </div>
-      </div>
-      </section>
 
-      <section id="about" class="about">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-              I'm a passionate frontend developer with expertise in modern web
-              technologies, currently working at Megatron Company. My journey in
-              web development has led me to master Vue.js and Nuxt.js, creating
-              responsive, multilingual applications that deliver exceptional
-              user experiences.
-            </p>
-            <p>
-              I specialize in building PWA applications with advanced features
-              like offline support, internationalization, and performance
-              optimization. I've successfully boosted app performance by 25% and
-              improved user engagement through innovative solutions.
-            </p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">2+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">1000+</span>
-              <span class="stat-label">Users Served</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">Infinite</span>
-              <span class="stat-label">Cups of Coffee</span>
-            </div>
+        <div class="hero-card reveal" aria-hidden="true">
+          <div class="code-window">
+            <div class="window-top"><span></span><span></span><span></span></div>
+            <pre><code><span class="purple">const</span> developer = {
+  name: <span class="green">"Mahmoud Abdelrahman"</span>,
+  role: <span class="green">"Frontend Developer"</span>,
+  stack: [<span class="gold">"Vue"</span>, <span class="gold">"Nuxt"</span>, <span class="gold">"JavaScript"</span>],
+  focus: [<span class="cyan">"SEO"</span>, <span class="cyan">"PWA"</span>, <span class="cyan">"Premium UI"</span>],
+  build() {
+    return <span class="green">"Fast, elegant, scalable web apps"</span>;
+  }
+};</code></pre>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="skills">
       <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Book Store Platform</h3>
-            <p class="project-description">
-              A comprehensive book download and reading platform with advanced
-              caching strategies and lazy loading techniques. Achieved 40%
-              decrease in page load times and 30% increase in average session
-              duration.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">PWA</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.ysk-book.com/en" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/books"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Skills</div>
+          <h2>Modern frontend stack with product thinking.</h2>
+          <p>Not just pages — polished interfaces, clean state, responsive systems, and SEO-aware delivery.</p>
         </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Comics Platform & Dashboard</h3>
-            <p class="project-description">
-              An innovative comic viewing experience with responsive design and
-              simplified navigation. Enhanced scalability using modular
-              components and advanced state management, achieving 35% faster
-              rendering times.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Pinia</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.ysk-comics.com/en" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/comics"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Megatron Company</h3>
-            <p class="project-description">
-              Developed a fast, SEO-optimized corporate website for Megatron
-              Soft using Vue.js, Nuxt.js, and Tailwind CSS. <br />
-              Implemented server-side rendering (SSR) for improved search engine
-              visibility. <br />
-              Added PWA features (offline support & push notifications),
-              increasing user engagement by 20%. <br />
-              Integrated internationalization (i18n), supporting 5+ languages to
-              expand global reach.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Pinia</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.megatron-soft.com/en" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/Megatron"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Shahin Furniture Company</h3>
-            <p class="project-description">
-              Created a modern furniture showcase website focused on performance
-              and user experience.
-              <br />
-              Built a responsive, mobile-first UI with Tailwind CSS, increasing
-              customer satisfaction by 15%. <br />
-              Optimized content caching and lazy loading, reducing page load
-              time by 35%. <br />
-              Enhanced SEO performance through semantic HTML and structured
-              data.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Pinia</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.shahin-furniture.com/" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/Shahin"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">El-Doc Store</h3>
-            <p class="project-description">
-              Built an intuitive and accessible medical e-commerce platform.
-              Prioritized clarity and ease-of-use for healthcare professionals
-              and consumers alike. Impact: Boosted customer engagement through
-              mobile-first design and rapid UI feedback.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Pinia</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.el-doc.com/" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/El-Doc"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">SADR Website & Dashboard</h3>
-            <p class="project-description">
-              A comprehensive platform featuring user-friendly interface, secure
-              authentication, responsive design, and integrated multilingual
-              support for worldwide accessibility.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">i18n</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.sadr.com.sa/en" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/sadr"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Car Services Platform</h3>
-            <p class="project-description">
-              A car service booking platform with engaging interface and
-              strategic lazy loading implementation. Achieved 35% reduction in
-              page load time through performance optimization techniques.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">PWA</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.yaasta.com/ar" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/Yaasta-Car-Services"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Ideal Stores</h3>
-            <p class="project-description">
-              Engineered a secure admin dashboard and dynamic storefront for
-              Ideal Stores, handling CRUD operations for 1,000+ records with
-              real-time feedback. Impact: Reached a global audience of 5,000+
-              users with multilingual support, optimized routes, and SEO
-              integration.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Nuxt.js</span>
-              <span class="tech-tag">PWA</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.idealstores.com.sa/en" class="project-link"
-                >Live Demo</a
-              >
-              <a
-                href="https://github.com/mahmoudDeveloperM/Ideal-Stores"
-                class="project-link"
-                >Source Code</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">YouLearnt</h3>
-            <p class="project-description">
-              An online learning platform focused on smooth course discovery,
-              multilingual accessibility, and a clean user experience for
-              learners.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">E-Learning</span>
-              <span class="tech-tag">Responsive UI</span>
-              <span class="tech-tag">Multilingual</span>
-              <span class="tech-tag">SEO</span>
-            </div>
-            <div class="project-links">
-              <a href="https://youlearnt.com/en" class="project-link"
-                >Live Demo</a
-              >
-            </div>
-          </div>
+        <div class="grid skills-grid">
+          <article class="card reveal"><h3>Frontend Engineering</h3><p>Reusable components, clean layouts, responsive design, and production UI systems.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+          <article class="card reveal"><h3>Vue Ecosystem</h3><p>Building scalable Vue and Nuxt applications with strong routing and page architecture.</p><div class="tags"><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span><span class="tag">SPA</span></div></article>
+          <article class="card reveal"><h3>SEO & Performance</h3><p>Metadata, schema, speed, accessibility, and pages built to be discoverable.</p><div class="tags"><span class="tag">SEO</span><span class="tag">Schema</span><span class="tag">Core UX</span></div></article>
+          <article class="card reveal"><h3>PWA & UX Polish</h3><p>Installable experiences, smooth interactions, mobile-friendly navigation, and premium motion.</p><div class="tags"><span class="tag">PWA</span><span class="tag">UX</span><span class="tag">Motion</span></div></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="projects">
       <div class="container">
-        <div class="contact-content">
-          <h2 class="contact-title">Let's Work Together</h2>
-          <p class="contact-description">
-            Ready to bring your ideas to life? I specialize in creating
-            responsive, multilingual, and high-performance web applications.
-            Let's discuss your next project!
-          </p>
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Selected Work</div>
+          <h2>Projects designed to feel fast, clear, and premium.</h2>
+        </div>
+        <div class="grid projects-grid">
+          <article class="card project-card reveal"><div><div class="project-top"><h3>Book Store Platform</h3><span class="project-number">01</span></div><p>Multilingual commerce-style platform with SEO-focused structure and clean user flow.</p><div class="tags"><span class="tag">Nuxt</span><span class="tag">SEO</span><span class="tag">E-commerce</span></div></div><a class="project-link" href="https://www.ysk-book.com/en" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3>Comics Platform</h3><span class="project-number">02</span></div><p>Content platform and dashboard experience built for browsing, discovery, and management.</p><div class="tags"><span class="tag">Dashboard</span><span class="tag">Vue</span><span class="tag">Content</span></div></div><a class="project-link" href="https://www.ysk-comics.com/en" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3>Megatron Company</h3><span class="project-number">03</span></div><p>Corporate website experience with strong presentation, service pages, and modern layout.</p><div class="tags"><span class="tag">Corporate</span><span class="tag">UI</span><span class="tag">Responsive</span></div></div><a class="project-link" href="https://www.megatron-soft.com/en" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3>SADR Website</h3><span class="project-number">04</span></div><p>Website and dashboard work with professional interface structure and scalable content.</p><div class="tags"><span class="tag">Website</span><span class="tag">Dashboard</span><span class="tag">Nuxt</span></div></div><a class="project-link" href="https://www.sadr.com.sa/en" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3>Car Services Platform</h3><span class="project-number">05</span></div><p>Service platform with mobile-first browsing and Arabic user experience considerations.</p><div class="tags"><span class="tag">Arabic UX</span><span class="tag">Services</span><span class="tag">Mobile</span></div></div><a class="project-link" href="https://www.yaasta.com/ar" target="_blank" rel="noopener">Open project →</a></article>
+          <article class="card project-card reveal"><div><div class="project-top"><h3>YouLearnt</h3><span class="project-number">06</span></div><p>Learning platform experience focused on structured pages and clean content presentation.</p><div class="tags"><span class="tag">Education</span><span class="tag">UX</span><span class="tag">SEO</span></div></div><a class="project-link" href="https://youlearnt.com/en" target="_blank" rel="noopener">Open project →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-eyebrow">Experience</div>
+          <h2>Built around real delivery, not just visuals.</h2>
+        </div>
+        <div class="timeline">
+          <article class="card timeline-item reveal"><div class="timeline-date">Current Focus</div><div><h3>Premium Frontend Development</h3><p>Building polished portfolio, company, dashboard, and content-driven experiences using modern frontend workflows.</p></div></article>
+          <article class="card timeline-item reveal"><div class="timeline-date">Core Stack</div><div><h3>Vue.js / Nuxt.js Developer</h3><p>Specialized in frontend architecture, reusable UI, routing, SEO metadata, responsive layouts, and PWA-ready experiences.</p></div></article>
+          <article class="card timeline-item reveal"><div class="timeline-date">Product Quality</div><div><h3>Performance & UX Improvement</h3><p>Focused on making websites feel faster, cleaner, easier to use, and more professional on every screen size.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <h2>Let’s build something premium.</h2>
+          <p>Need a high-quality frontend, landing page, dashboard, SEO-friendly website, or portfolio redesign? Let’s connect.</p>
           <div class="contact-links">
-            <a href="mailto:mahnoudhouda5632523@gmail.com" class="contact-link"
-              >Email Me</a
-            >
-            <a
-              href="https://www.linkedin.com/in/mahmoud-abdalrahman-2baa81197/"
-              class="contact-link"
-              >LinkedIn</a
-            >
-            <a
-              href="https://github.com/mahmoudDeveloperM?tab=repositories"
-              class="contact-link"
-              >GitHub</a
-            >
-            <a href="https://mahmouddeveloperm.github.io/Portfolio/cv.pdf" download class="contact-link"
-              >Download CV</a
-            >
+            <a class="btn btn-primary" href="mailto:mahnoudhouda5632@gmail.com">Email Me</a>
+            <a class="btn btn-ghost" href="https://github.com/mahmoudDeveloperM" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/mahmoud-abdalrahman-2baa81197/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
     </section>
-    </main>
+  </main>
 
-    <footer>
-      <div class="container">
-        <p>&copy; <span id="year"></span> Mahmoud Abdelrahman. All rights reserved.</p>
-      </div>
-    </footer>
+  <footer>
+    <div class="container">© <span id="year"></span> Mahmoud Abdelrahman. Crafted with premium frontend detail.</div>
+  </footer>
 
-    <script>
-      const navbar = document.getElementById("navbar");
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const links = document.querySelectorAll('.nav-links a');
+    const year = document.getElementById('year');
+    const cursorGlow = document.getElementById('cursorGlow');
 
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (event) {
-          const href = this.getAttribute("href");
-          if (!href || href === "#") return;
+    year.textContent = new Date().getFullYear();
 
-          event.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? 'Close' : 'Menu';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = 'Menu';
       });
+    });
 
-      const navLinks = document.querySelectorAll(".nav-links a");
-      const sections = document.querySelectorAll("main section[id]");
-      const navToggle = document.querySelector(".nav-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
+    window.addEventListener('mousemove', (event) => {
+      cursorGlow.style.left = event.clientX + 'px';
+      cursorGlow.style.top = event.clientY + 'px';
+    });
 
-      const updateOnScroll = () => {
-        const y = window.scrollY;
-        if (navbar) {
-          navbar.classList.toggle("scrolled", y > 60);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = document.querySelectorAll('main section[id]');
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
         }
-
-        const positionY = y + window.innerHeight * 0.3;
-        sections.forEach((section) => {
-          const start = section.offsetTop;
-          const end = start + section.offsetHeight;
-          if (positionY >= start && positionY < end) {
-            navLinks.forEach((link) => {
-              link.classList.toggle(
-                "active",
-                link.getAttribute("href") === `#${section.id}`
-              );
-            });
-          }
-        });
-      };
-
-      let scrollTicking = false;
-      const requestScrollUpdate = () => {
-        if (scrollTicking) return;
-        scrollTicking = true;
-        requestAnimationFrame(() => {
-          updateOnScroll();
-          scrollTicking = false;
-        });
-      };
-
-      window.addEventListener("scroll", requestScrollUpdate, { passive: true });
-      window.addEventListener("resize", requestScrollUpdate, { passive: true });
-      updateOnScroll();
-
-      if (navToggle && mobileMenu) {
-        navToggle.addEventListener("click", () => {
-          const isOpen = mobileMenu.classList.toggle("is-open");
-          navToggle.setAttribute("aria-expanded", String(isOpen));
-          mobileMenu.setAttribute("aria-hidden", String(!isOpen));
-        });
-
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.remove("is-open");
-            navToggle.setAttribute("aria-expanded", "false");
-            mobileMenu.setAttribute("aria-hidden", "true");
-          });
-        });
-      }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -12% 0px" }
-      );
-
-      const animated = [
-        ...document.querySelectorAll(".section-title"),
-        ...document.querySelectorAll(".skill-card"),
-        ...document.querySelectorAll(".project-card"),
-        ...document.querySelectorAll(".about-text"),
-        ...document.querySelectorAll(".about-stats"),
-        ...document.querySelectorAll(".contact-content")
-      ];
-
-      animated.forEach((el) => {
-        el.classList.add("fade-in");
-        observer.observe(el);
       });
+    }, { threshold: 0.45 });
 
-      const statNodes = document.querySelectorAll(".stat-number");
-      const targets = [10, 2, 1000];
-
-      statNodes.forEach((node, idx) => {
-        if (idx >= targets.length) return;
-
-        const target = targets[idx];
-        let current = 0;
-        const step = Math.max(1, Math.ceil(target / 60));
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          node.textContent = `${current}+`;
-        }, 22);
-      });
-
-      const yearNode = document.getElementById("year");
-      if (yearNode) {
-        yearNode.textContent = new Date().getFullYear();
-      }
-    </script>
-  </body>
+    sections.forEach(section => activeObserver.observe(section));
+  </script>
+</body>
 </html>
-
